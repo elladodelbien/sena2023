@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/elladodelbien/sena2023",
+  "homepage": "https://elladodelbien.github.io/sena2023/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
