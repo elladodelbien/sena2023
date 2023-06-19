@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   font-size: ${(props) => props.size};
@@ -24,7 +25,7 @@ const BotonesEnlace = ({ text, link, size, backgroundColor }) => {
       hoverColor={brightenColor(backgroundColor)}
     >
       <p>{text}</p>
-      <a href={link}>Enlace</a>
+      <Link to={link}>Enlace</Link>
     </Container>
   );
 };

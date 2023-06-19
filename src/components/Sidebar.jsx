@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import logo from "../assets/sena.png";
 import { AiOutlineCaretLeft } from "react-icons/ai";
 import BotonesEnlace from "./BotonesEnlace";
+import { Link } from "react-router-dom";
 
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
