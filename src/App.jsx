@@ -44,13 +44,17 @@ function App() {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 150px auto;
   transition: all 0.6s;
   background: ${({theme}) => theme.bgTotal};
 
   &.active {
-    grid-template-columns:350px auto;
+    grid-template-columns:280px auto;
+
    
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
   }
 `;
 

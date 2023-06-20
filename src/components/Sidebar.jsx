@@ -25,25 +25,25 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       <BotonesEnlace
         text="Evidencia numero 1"
         link="/home"
-        size="23px"
+        size="11px"
         backgroundColor="#9747FF"
       />
       <BotonesEnlace
         text="Evidencia numero 2"
         link="/edades"
-        size="23px"
+        size="11px"
         backgroundColor="#9747FF"
       />
       <BotonesEnlace
         text="Evidencia numero 3"
         link="/vectores"
-        size="23px"
+        size="11px"
         backgroundColor="#9747FF"
       />
       <BotonesEnlace
         text="Evidencia numero 4"
         link="/ratting"
-        size="23px"
+        size="11px"
         backgroundColor="#9747FF"
       />
     </Container>
@@ -57,10 +57,14 @@ const Container = styled.div`
   padding: 15px;
   flex-direction: column;
   transition: transform 0.5s, background-color 0.3s;
+  height:100vh;
 
   .Sidebarbutton {
     position: absolute;
     top: ${({ isopen }) => (isopen ? `111px` : ``)};
+    @media (max-width: 768px) {
+      opacity: 0;
+    }
     right: -16px;
     width: 32px;
     height: 32px;
@@ -95,8 +99,8 @@ const Container = styled.div`
       display: flex;
       cusor: pointer;
       transition: all 1s;
-      transform: ${({ isopen }) => (isopen ? `scale(0.4)` : `scale(0.5)`)};
-      margin: -70px; /* Ajusta el valor según tus preferencias */
+      transform: ${({ isopen }) => (isopen ? `scale(0.2)` : `scale(0.3)`)};
+      margin: -100px; 
 
       img {
         max-width: 100%;

@@ -23,7 +23,7 @@ const ColumnOne = () => {
 
   return (
     <Container>
-      <Title>Título</Title>
+      <Title>Calcula el area del cuadrado</Title>
       <InputContainer>
         <Label>Ancho:</Label>
         <Input
