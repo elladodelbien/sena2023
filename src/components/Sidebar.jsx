@@ -34,6 +34,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         size="23px"
         backgroundColor="#9747FF"
       />
+      <BotonesEnlace
+        text="Evidencia numero 3"
+        link="/vectores"
+        size="23px"
+        backgroundColor="#9747FF"
+      />
+      <BotonesEnlace
+        text="Evidencia numero 4"
+        link="/ratting"
+        size="23px"
+        backgroundColor="#9747FF"
+      />
     </Container>
   );
 };
