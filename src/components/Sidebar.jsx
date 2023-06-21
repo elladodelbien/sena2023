@@ -58,6 +58,10 @@ const Container = styled.div`
   flex-direction: column;
   transition: transform 0.5s, background-color 0.3s;
   height:100vh;
+ 
+  @media (max-width: 768px) {
+    height:auto;
+  }
 
   .Sidebarbutton {
     position: absolute;
