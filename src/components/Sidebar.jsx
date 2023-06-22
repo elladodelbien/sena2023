@@ -24,9 +24,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       </div>
       <BotonesEnlace
         text="Evidencia numero 1"
-        link="/home"
+        link="/"
         size="11px"
         backgroundColor="#9747FF"
+        enlace="Edades"
       />
       <BotonesEnlace
         text="Evidencia numero 2"
@@ -58,6 +59,7 @@ const Container = styled.div`
   flex-direction: column;
   transition: transform 0.5s, background-color 0.3s;
   height:100vh;
+  font-size:4px;
  
   @media (max-width: 768px) {
     height:auto;
@@ -115,4 +117,4 @@ const Container = styled.div`
   }
 `;
 
-export { Sidebar };
+export default  Sidebar ;

@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const BotonesEnlace = ({ text, link, size, backgroundColor }) => {
+const BotonesEnlace = ({ text, link, size, backgroundColor,enlace }) => {
   return (
     <Container
       size={size}
@@ -25,7 +25,7 @@ const BotonesEnlace = ({ text, link, size, backgroundColor }) => {
       hoverColor={brightenColor(backgroundColor)}
     >
       <p>{text}</p>
-      <Link to={link}>Enlace</Link>
+      <Link to={link}>{enlace}</Link>
     </Container>
   );
 };

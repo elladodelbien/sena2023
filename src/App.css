@@ -8,4 +8,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Marcellus;
+  
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+  
+}
+
+
+.input {
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+}
+.App-lottie {
+  padding: 10px;
 }

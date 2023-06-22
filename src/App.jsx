@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+
 import "./App.css";
 // import { Sidebar } from './components/Sidebar'
 import { MyRoutes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
 import { styled } from "styled-components";
-import { Sidebar } from "./components/Sidebar";
+import Sidebar  from "./components/Sidebar";
 import { Ligth, Dark } from "./styles/Themes";
 import { ThemeProvider } from "styled-components";
 
@@ -12,11 +13,11 @@ import { ThemeProvider } from "styled-components";
 export const ThemeContext = React.createContext(null);
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const themeStyles = theme === "light" ? Ligth : Dark;
+  const [theme, setTheme] = useState("ligth");
+  const themeStyles = theme === "ligth" ? Ligth : Dark;
 
   const CambiarTema = () => {
-    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+    setTheme((theme) => (theme === "ligth" ? "dark" : "ligth"));
   };
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -47,6 +48,7 @@ const Container = styled.div`
   grid-template-columns: 150px auto;
   transition: all 0.6s;
   background: ${({theme}) => theme.bgTotal};
+  
 
   &.active {
     grid-template-columns:280px auto;
