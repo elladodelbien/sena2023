@@ -5,10 +5,9 @@ import "./App.css";
 import { MyRoutes } from "./routes/routes";
 import { BrowserRouter } from "react-router-dom";
 import { styled } from "styled-components";
-import Sidebar  from "./components/Sidebar";
+import Sidebar from "./components/Sidebar";
 import { Ligth, Dark } from "./styles/Themes";
 import { ThemeProvider } from "styled-components";
-
 
 export const ThemeContext = React.createContext(null);
 
@@ -28,14 +27,15 @@ function App() {
         <ThemeProvider theme={themeStyles}>
           <BrowserRouter>
             <Container className={sidebarOpen ? "sidebarState active" : " "}>
-              <Sidebar
-                sidebarOpen={sidebarOpen}
-                setSidebarOpen={setSidebarOpen}
-               
-              />
+              <div>
+                <Sidebar
+                  sidebarOpen={sidebarOpen}
+                  setSidebarOpen={setSidebarOpen}
+                />
+              </div>
               <MyRoutes />
             </Container>
-              <input onClick={CambiarTema} type="checkbox" />
+            {/* <input onClick={CambiarTema} type="checkbox" /> */}
           </BrowserRouter>
         </ThemeProvider>
       </ThemeContext.Provider>
@@ -46,14 +46,12 @@ function App() {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 150px auto;
-  transition: all 0.6s;
-  background: ${({theme}) => theme.bgTotal};
+  transition: all 0.9s;
+  background: ${({ theme }) => theme.bgTotal};
   
 
   &.active {
-    grid-template-columns:280px auto;
-
-   
+    grid-template-columns: 280px auto;
   }
   @media (max-width: 768px) {
     grid-template-columns: auto;

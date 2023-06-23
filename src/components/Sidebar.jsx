@@ -53,16 +53,25 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 const Container = styled.div`
   background: ${(props) => props.theme.bg1};
   color: ${(props) => props.theme.white};
-  position: sticky;
+  
+  @media (max-width: 768px) {
+    position: sticky;
+    width:100%;
+  }
+
+  position: fixed;
   display: flex;
   padding: 15px;
   flex-direction: column;
-  transition: transform 0.5s, background-color 0.3s;
+  transition: all 0.9s;
   height:100vh;
   font-size:4px;
+  width: ${({ isopen }) => (isopen ? `250px` : `100px`)};
+  
  
   @media (max-width: 768px) {
     height:auto;
+    
   }
 
   .Sidebarbutton {
@@ -97,7 +106,7 @@ const Container = styled.div`
 
     h2 {
       display: ${({ isopen }) => (!isopen ? `none` : `block`)};
-      margin-top: -38px; 
+      margin: 9px; 
      
     }
 
@@ -105,8 +114,8 @@ const Container = styled.div`
       display: flex;
       cusor: pointer;
       transition: all 1s;
-      transform: ${({ isopen }) => (isopen ? `scale(0.2)` : `scale(0.3)`)};
-      margin: -100px; 
+      transform: ${({ isopen }) => (isopen ? `scale(0.3)` : `scale(0.2)`)};
+      margin: -123px; 
 
       img {
         max-width: 100%;

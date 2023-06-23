@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const BotonesEnlace = ({ text, link, size, backgroundColor,enlace }) => {
+const BotonesEnlace = ({ text, link, size, backgroundColor,enlace,calcs,texto }) => {
   return (
     <Container
       size={size}
@@ -26,6 +26,7 @@ const BotonesEnlace = ({ text, link, size, backgroundColor,enlace }) => {
     >
       <p>{text}</p>
       <Link to={link}>{enlace}</Link>
+      <button onClick={calcs}>{texto}</button>
     </Container>
   );
 };

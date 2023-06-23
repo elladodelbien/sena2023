@@ -2,12 +2,14 @@ import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "../assets/lottie.json";
 import styled from "styled-components";
+import Inputts from "./Inputts";
+
 
 const Container = styled.div`
 h1 {
   font-size: 12px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 2px;
   padding-bottom: 0;
   font-weight: bold;
   margin:12px;
@@ -32,7 +34,7 @@ h1 {
 
 
 
-const Lottieimg = () => {
+const Lottieimg = ({funcionH,calculo,funcionW}) => {
   const container = useRef(null);
 
   useEffect(() => {
@@ -53,7 +55,14 @@ const Lottieimg = () => {
     <div className="App-lottie">
       <h1>Vamos a Calcular las areas de tus figuras</h1>
       <div className="input">
-        <input type="text" />
+        <Inputts 
+        funciones={funcionH}
+        calculo={calculo}     
+        />
+        <Inputts 
+        funciones={funcionW}
+        calculo={calculo}     
+        />
       </div>
       <div className="container" ref={container}></div>
     </div>
