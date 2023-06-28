@@ -2,39 +2,31 @@ import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import animationData from "../assets/lottie.json";
 import styled from "styled-components";
-import Inputts from "./Inputts";
-
+import Inputts from "./Formulario";
 
 const Container = styled.div`
-h1 {
-  font-size: 12px;
-  text-align: center;
-  padding-top: 2px;
-  padding-bottom: 0;
-  font-weight: bold;
-  margin:12px;
-
-}
+  h1 {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 0;
+    font-weight: bold;
+    margin: 12px;
+  }
   .App-lottie {
     // Estilos para el contenedor principal
   }
 
-  .input {
-    // Estilos para el contenedor del input
-  }
+ 
 
   .container {
     // Estilos para el contenedor de la animación
+    display: flex;
+    align-items: flex-start;
   }
 `;
 
-
-
-
-
-
-
-const Lottieimg = ({funcionH,calculo,funcionW}) => {
+const Lottieimg = ({ funcionH, calculo, funcionW, wid, heig }) => {
   const container = useRef(null);
 
   useEffect(() => {
@@ -52,20 +44,11 @@ const Lottieimg = ({funcionH,calculo,funcionW}) => {
 
   return (
     <Container>
-    <div className="App-lottie">
       <h1>Vamos a Calcular las areas de tus figuras</h1>
-      <div className="input">
-        <Inputts 
-        funciones={funcionH}
-        calculo={calculo}     
-        />
-        <Inputts 
-        funciones={funcionW}
-        calculo={calculo}     
-        />
+      <div className="App-lottie">
+        <div className="container" ref={container}></div>
       </div>
-      <div className="container" ref={container}></div>
-    </div>
+      {/* <Inputts funciones={funcionH}  wid={wid} heig={heig}  calculo={calculo} /> */}
     </Container>
   );
 };

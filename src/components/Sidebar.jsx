@@ -2,13 +2,17 @@ import { styled } from "styled-components";
 import logo from "../assets/sena.png";
 import { AiOutlineCaretLeft } from "react-icons/ai";
 import BotonesEnlace from "./BotonesEnlace";
+
 import { Link } from "react-router-dom";
+import BotonesSidebar from "./BotonesSidebar";
 
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const BarraOculta= () => {
     setSidebarOpen((sidebarOpen) => (sidebarOpen === true ? false : true));
   };
+
+  const SizeFont =  sidebarOpen ? `15px` : `8px`
   return (
     <Container isopen={sidebarOpen}>
       <div className="Logocontent">
@@ -22,31 +26,48 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           Evidencias <br /> Sena
         </h2>
       </div>
-      <BotonesEnlace
-        text="Evidencia numero 1"
-        link="/"
-        size="11px"
-        backgroundColor="#9747FF"
-        enlace="Edades"
+      <BotonesSidebar
+      link="/"
+      size="29px"    
+      backgroundcolor={"#9747FF"}
+      text="EVIDENCIA 1"
+      textLink="CALCULO DE AREAS Y PERIMETROS"
+      open={sidebarOpen}
+      fontSize={SizeFont}
+     
       />
-      <BotonesEnlace
-        text="Evidencia numero 2"
-        link="/edades"
-        size="11px"
-        backgroundColor="#9747FF"
+      <BotonesSidebar
+      link="/edades"
+      size="29px"    
+      backgroundcolor={"#9747FF"}
+      text="EVIDENCIA 2"
+      textLink="AGRUPACION DE VECTORES"
+      open={sidebarOpen}
+      fontSize={SizeFont}
+     
       />
-      <BotonesEnlace
-        text="Evidencia numero 3"
-        link="/vectores"
-        size="11px"
-        backgroundColor="#9747FF"
+      <BotonesSidebar
+      link="/edades"
+      size="29px"    
+      backgroundcolor={"#9747FF"}
+      text="EVIDENCIA 1"
+      textLink="RATTING DE CANCIONES"
+      open={sidebarOpen}
+      fontSize={SizeFont}
+     
       />
-      <BotonesEnlace
-        text="Evidencia numero 4"
-        link="/ratting"
-        size="11px"
-        backgroundColor="#9747FF"
+      <BotonesSidebar
+      link="/edades"
+      size="29px"    
+      backgroundcolor={"#9747FF"}
+      text="EVIDENCIA 1"
+      textLink="CALCULO DE AREAS Y PERIMETROS"
+      open={sidebarOpen}
+      fontSize={SizeFont}
+     
       />
+    
+      
     </Container>
   );
 };
@@ -71,7 +92,7 @@ const Container = styled.div`
  
   @media (max-width: 768px) {
     height:auto;
-    
+    padding:30px;
   }
 
   .Sidebarbutton {

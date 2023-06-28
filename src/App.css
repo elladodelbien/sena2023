@@ -1,24 +1,21 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Marcellus;
-  
+  color: white;
 }
-
 
 .container {
   display: flex;
   justify-content: center;
   margin: 8px;
-  
 }
-
+button p {
+  font-size: small;
+}
 
 .input {
   margin: 1px;
@@ -27,4 +24,32 @@
 }
 .App-lottie {
   padding: 10px;
+}
+.columna-2 {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+}
+.columna-2 > div {
+  flex: 1 0 88%;
+  height: 200px;
+  margin: 12px;
+  
+}
+
+.redd {
+  /* background-color: red; */
+}
+.blues {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: chartreuse;
 }

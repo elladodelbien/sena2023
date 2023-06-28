@@ -3,6 +3,11 @@ import BotonesEnlace from "./BotonesEnlace";
 import imagenCuadrado from "../assets/area-de-un-cuadrado-formula-2.png";
 import imagenTriangulo from "../assets/tr.png";
 import imagenRectangulo from "../assets/rect.png";
+import BotonTriangulo from "./BotonTriangulo";
+import BotonRectangulo from "./BotonRectangulo";
+
+
+
 
 const Container = styled.div`
   display: grid;
@@ -10,44 +15,65 @@ const Container = styled.div`
   grid-gap: 10px;
   height: auto;
   margin: 10px;
+  background-color: #575a6d80;
 
   .cuadrado {
-    background-color: #e0e0e0;
     padding: 7px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     justify-content: center;
     img {
       width: 100%;
-      height: auto;
+      @media (max-width: 768px) {
+        height: auto;
+      }
+      height: 100px;
     }
   }
 `;
 
-const BotonesFiguras = ({ calcs }) => {
+const BotonesFiguras = ({  calculo,   width,  texto, toggleFormulario, funcionh,  funcionb}) => {
+    const text1 = "rectangulo"
+    const text3 = "Cuadrado"
+    const text2 = "triangulo"
+
   return (
     <Container>
       <div className="cuadrado">
         <div>
           <img src={imagenRectangulo} alt="" srcSet="" />
         </div>
-        <BotonesEnlace calcs={calcs} size="30px" backgroundColor="#9747FF" />
+        <BotonesEnlace
+          text={text1}
+          texto={texto}
+          size="30px"
+          backgroundColor=""
+          calcs={toggleFormulario}
+          funcionb={funcionb}
+          calculo={calculo}
+          funcionh={funcionh}
+
+          
+        />
       </div>
       <div className="cuadrado">
         <div>
-          <img src={imagenTriangulo} alt="" srcSet="" />
+          <img src={imagenCuadrado}  alt="" srcSet="" />
         </div>
-        <BotonesEnlace calcs={calcs} size="30px" backgroundColor="#9747FF" />
+        <BotonRectangulo/>
       </div>
       <div className="cuadrado">
+       
         <div>
-          <img src={imagenCuadrado} width={80} height={80} alt="" srcSet="" />
+          <img src={imagenTriangulo} width={80} height={80} alt="" srcSet="" />
+          <BotonTriangulo/>
         </div>
-        <BotonesEnlace calcs={calcs} size="30px" backgroundColor="#9747FF" />
+        
       </div>
     </Container>
   );
 };
 
 export default BotonesFiguras;
+{imagenCuadrado} 

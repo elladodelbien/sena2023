@@ -22,7 +22,7 @@ export const Ligth = {
         bg3: "rgb(230,230,230)",
         primary: "rgb(52,131,235)",  
         bg4: "#9245FC",
-        bgTotal: "#EDF3FB",
+        bgTotal: "#9747ff",
         bgtgderecha: "#fff",
         barracroll: "#a8a7a7",
         gray900: "#000000",

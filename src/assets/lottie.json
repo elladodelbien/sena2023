@@ -1,8 +1,8 @@
 {
     "nm": "Comp 1",
     "ddd": 0,
-    "h": 300,
-    "w": 300,
+    "h": 400,
+    "w": 400,
     "meta": {
         "g": "@lottiefiles/toolkit-js 0.26.1"
     },

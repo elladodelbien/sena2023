@@ -32,36 +32,42 @@ const Container = styled.div`
   }
 `;
 
-const BotonesEnlace = ({  text,  link,  backgroundcolor,  enlace,funcionb,funcionh,calculo, texto,}) => {
+const BotonRectangulo = ({
+  text,
+  link,
+  backgroundcolor,
+  enlace,
+  funcionb,
+  funcionh,
+  calculo,
+  texto,
+}) => {
   const hovercolor = backgroundcolor ? brightenColor(backgroundcolor) : null;
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  const cerrarRectangulo = () => {
+    setMostrarFormulario(false);
+  };
 
   const toggleFormulario = () => {
     setMostrarFormulario(!mostrarFormulario);
-  };
-  const cerrarr = () => {
-    setMostrarFormulario(false);
   };
 
   return (
     <Container backgroundcolor={backgroundcolor} hovercolor={hovercolor}>
       <div>
-        <p className="parrafo-img">{text}</p>
-        <Link to={link}>{enlace}</Link>
+        <p className="parrafo-img">Rectangulo</p>
+        {/* <Link to={link}>{enlace}</Link> */}
       </div>
       <div className="btn">
         <button className="btnEnlace" onClick={toggleFormulario}>
-          {texto}
+          Calcular
         </button>
 
         {mostrarFormulario && (
           <Formulario
-          titulo={"Cuadrado"}
+            titulo={"Rectangulo"}
+            cerrar={cerrarRectangulo}
             figuraGeometrica={"CALCULAR"}
-            funcionb={funcionb}
-            calculo={calculo}
-            funcionh={funcionh}
-            cerrar={cerrarr}
             wid={"300px"}
             heig={"350px"}
           />
@@ -93,4 +99,4 @@ const brightenColor = (color) => {
   return brightenedColor;
 };
 
-export default BotonesEnlace;
+export default BotonRectangulo;
