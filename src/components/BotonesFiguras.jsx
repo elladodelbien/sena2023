@@ -21,6 +21,11 @@ const Container = styled.div`
     padding: 7px;
     display: flex;
     flex-direction: column;
+    
+    .img-rectangulo {
+   
+    }
+
 
     justify-content: center;
     img {
@@ -41,7 +46,7 @@ const BotonesFiguras = ({  calculo,   width,  texto, toggleFormulario, funcionh,
   return (
     <Container>
       <div className="cuadrado">
-        <div>
+        <div className="img-rectangulo">
           <img src={imagenRectangulo} alt="" srcSet="" />
         </div>
         <BotonesEnlace

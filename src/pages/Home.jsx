@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: auto;
   }
+ 
   .Clmn2 {
  margin:6px;
  padding:2px;

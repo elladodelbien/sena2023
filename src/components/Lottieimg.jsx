@@ -5,6 +5,11 @@ import styled from "styled-components";
 import Inputts from "./Formulario";
 
 const Container = styled.div`
+@media (max-width: 395px) {
+  margin-bottom: -190px;
+}
+
+
   h1 {
     font-size: 12px;
     text-align: center;

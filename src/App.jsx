@@ -59,6 +59,10 @@ const Container = styled.div`
     grid-template-columns: auto;
     width:110vw;
   }
+  @media (max-width: 395px) {
+    grid-template-columns: auto;
+    width:158vw;
+  }
 `;
 
 export default App;

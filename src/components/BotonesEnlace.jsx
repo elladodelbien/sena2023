@@ -8,6 +8,11 @@ const Container = styled.div`
 
   background: ${(props) => props.backgroundcolor};
   padding: 10px;
+  
+  
+  @media (max-width: 398px) {
+    padding-top: 32px;
+  }
   border-radius: 5px;
   display: inline-block;
   text-align: center;
