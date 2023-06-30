@@ -11,12 +11,20 @@ import BotonRectangulo from "./BotonRectangulo";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Divide el contenedor en tres columnas de igual ancho */
+  grid-template-columns:1fr 1fr 1fr;
+ margin:10px;
+  border-radius: 12px;
+  @media (max-width: 768px) {
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(139px, 1fr));/* Divide el contenedor en tres columnas de igual ancho */
+    width: 80vw;
+    padding:20px;
+    justify-content: center;
+  }
   grid-gap: 10px;
   height: auto;
-  margin: 10px;
   background-color: #575a6d80;
-
+  grid-auto-flow: row;
   .cuadrado {
     padding: 7px;
     display: flex;

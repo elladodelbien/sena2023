@@ -78,6 +78,7 @@ const Container = styled.div`
   @media (max-width: 768px) {
     position: sticky;
     width:100%;
+    
   }
 
   position: fixed;
@@ -93,6 +94,7 @@ const Container = styled.div`
   @media (max-width: 768px) {
     height:auto;
     padding:30px;
+    max-width: 100vw;
   }
 
   .Sidebarbutton {
@@ -133,7 +135,7 @@ const Container = styled.div`
 
     .imgcontent {
       display: flex;
-      cusor: pointer;
+      cursor: pointer;
       transition: all 1s;
       transform: ${({ isopen }) => (isopen ? `scale(0.3)` : `scale(0.2)`)};
       margin: -123px; 

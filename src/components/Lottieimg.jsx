@@ -7,6 +7,9 @@ import Inputts from "./Formulario";
 const Container = styled.div`
 @media (max-width: 395px) {
   margin-bottom: -190px;
+  h1 {
+    text-align:justify;
+  }
 }
 
 
@@ -17,6 +20,9 @@ const Container = styled.div`
     padding-bottom: 0;
     font-weight: bold;
     margin: 12px;
+    @media (max-width: 395px)  {
+      text-align: justify;
+    }
   }
   .App-lottie {
     // Estilos para el contenedor principal

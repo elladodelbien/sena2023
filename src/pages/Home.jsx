@@ -6,10 +6,20 @@ import { useState } from "react";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr  1fr;
   height: 180vh;
+  .col-1 {
+    display:flex;
+    flex-direction:column;    
+    margin-left: -44px;
+    @media (max-width: 768px) {
+      grid-template-columns: auto;
+      margin-left:30px;
+    }
+  }
   @media (max-width: 768px) {
     grid-template-columns: auto;
+    
   }
  
   .Clmn2 {
@@ -30,6 +40,11 @@ const Home = () => {
   const [height, setHeight] = useState("");
   const [area, setArea] = useState("");
   const [perimetro, setPerimetro] = useState("");
+  const BorrarStorage = () => {
+    localStorage.clear();
+    setArea("");
+    setPerimetro("");
+  }
 
   const texto = "Calcular";
 
@@ -43,7 +58,7 @@ const Home = () => {
     const value = event.target.value;
     setHeight(value);
   };
-
+// funcion calculo de area y perimetro de rectangulo
   const calculateAreaRectangulo = () => {
 
     const base = parseFloat(width)
@@ -62,9 +77,12 @@ const Home = () => {
     setPerimetro(perimetro);
     
   };
+
+
+  // 
   return (
     <Wrapper>
-      <article>
+      <article className="col-1">
         <BotonesFiguras
           funcionb={handleWidthChange}
           calculo={calculateAreaRectangulo}
@@ -93,7 +111,10 @@ const Home = () => {
             <p className="p-rectangulo">{area}</p>
             <h2  id="perimetroRectangulo"></h2>
             <p className="pr-rectangulo">{perimetro}</p>
+            
           </div>
+          <button onClick={BorrarStorage} > CLEAR</button>
+          
           <div className="blues">
             <p></p>
           </div>
