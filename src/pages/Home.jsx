@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr  1fr;
   height: 180vh;
+  #btn-clear {
+    width:100px;
+    border-radius:10px;
+    background:#da1647;
+    padding:10px;
+  }
   #recttangulo, #perimetroRectangulo {
     color:#000f0f;
   }
@@ -116,8 +122,8 @@ const Home = () => {
             <h2  id="perimetroRectangulo"></h2>
             <p className="pr-rectangulo">{perimetro}</p>
             
+          <button id="btn-clear" onClick={BorrarStorage} > CLEAR</button>
           </div>
-          <button onClick={BorrarStorage} > CLEAR</button>
           
           <div className="blues">
             <p></p>

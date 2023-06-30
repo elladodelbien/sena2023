@@ -50,6 +50,9 @@ button p {
 
 .redd {
   /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .blues {
   background-color: blue;
