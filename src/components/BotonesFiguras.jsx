@@ -16,7 +16,7 @@ const Container = styled.div`
   border-radius: 12px;
   @media (max-width: 768px) {
     height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(139px, 1fr));/* Divide el contenedor en tres columnas de igual ancho */
+    grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));/* Divide el contenedor en tres columnas de igual ancho */
     width: 80vw;
     padding:20px;
     justify-content: center;
