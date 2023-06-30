@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr  1fr;
   height: 180vh;
+  #recttangulo, #perimetroRectangulo {
+    color:#000f0f;
+  }
   .col-1 {
     display:flex;
     flex-direction:column;    
@@ -29,6 +32,7 @@ const Wrapper = styled.div`
   }
   .p-rectangulo, .pr-rectangulo{
     font-size:52px;
+    color:#141414;
   }
 `;
 

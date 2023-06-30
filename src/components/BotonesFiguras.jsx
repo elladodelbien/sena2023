@@ -21,6 +21,15 @@ const Container = styled.div`
     padding:20px;
     justify-content: center;
   }
+  @media (max-width: 395px) {
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));/* Divide el contenedor en tres columnas de igual ancho */
+    width: 80vw;
+    padding:20px;
+    justify-content: center;
+  }
+
+
   grid-gap: 10px;
   height: auto;
   background-color: #575a6d80;
