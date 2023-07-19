@@ -10,17 +10,32 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
+  
 
   @media (max-width: 768px) {
     grid-template-columns: auto;
+    
   }
+  
 `;
 
 const FormularioWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin:10px;
+  @media (min-width: 400px) and (max-width: 768px){
+    display:block;
+    margin-left: 47px;
+  }
+  @media (max-width: 395px) {
+    display:block;
+    padding:15px;
+    width:75%;
+    
+  }
+  
  
 `;
 const Container2 = styled.div`
@@ -36,10 +51,24 @@ const Container2 = styled.div`
     color:#f5de04;
     font-weight:bold;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 395px) {
+    display:block;
+    overflow:visible;
+    margin-top:49px;    
+    margin-right: 182px;
+    
+    .box {
+      max-width: 86%;
+      overflow-x: hidden;
+    }
+  }
+
+
+  @media (min-width: 400px) and (max-width: 768px) {
     display:block;
     overflow:visible;
     margin-top:49px;
+    
     .box {
       max-width: 86%;
       overflow-x: hidden;

@@ -17,9 +17,11 @@ justify-content:center;
 align-items:center;
 @media (max-width: 768px) {
   display:block ;
+  width:80%;
 }
 .error {
   display: block;
+  position:relative;
   background:red;
   color : white;
   margin:12px;
@@ -27,6 +29,7 @@ align-items:center;
   border-radius:4px ;
   font-weight:bold;
   width:90%;
+  z-index:9999;
 }
 .noerror {
   display: none;
