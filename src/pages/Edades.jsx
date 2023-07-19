@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ancianito from "../assets/anciano.json";
-
+import joven from "../assets/joven.json"
+import nino from "../assets/nino.json"
 import { useEffect, useState } from "react";
 import FormularioEdades from "../components/FormularioEdades";
 import Lottie from "lottie-react";
@@ -19,6 +20,7 @@ const FormularioWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:10px;
  
 `;
 const Container2 = styled.div`
@@ -29,9 +31,19 @@ const Container2 = styled.div`
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
+  span {
+    font-size:30px;
+    color:#f5de04;
+    font-weight:bold;
+  }
   @media (max-width: 768px) {
     display:block;
     overflow:visible;
+    margin-top:49px;
+    .box {
+      max-width: 86%;
+      overflow-x: hidden;
+    }
     
   }
 
@@ -51,9 +63,11 @@ const Container2 = styled.div`
     color: white;
     font-size: 4vw;
     padding: 10px;
-    background: gold;
+    background: #11211740;
     text-align: center;
-   
+    border-radius:5px;
+    box-shadow:0 0 19px 1px black;
+    margin:13px;
   }
   .box:nth-child(1) {
     grid-column: span 12;
@@ -171,24 +185,24 @@ const Edades = () => {
       <Container2>
         <div className="box">
           <p id="edadesMenores">
-            {parrafoMenores} <br /> {edadesMenores18} personas
+            {parrafoMenores} <br /><span>{edadesMenores18}</span>  personas
           </p>
           <div className="reductor">
-            <Lottie animationData={ancianito}></Lottie>
+            <Lottie animationData={nino}></Lottie>
           </div>
         </div>
 
         <div className="box">
           <p id="edadesMayores">
-            {parrafoMayores} <br /> {edadesMayores18} personas
+            {parrafoMayores} <br /> <span> {edadesMayores18}  </span>personas
           </p>
           <div className="reductor">
-            <Lottie animationData={ancianito}></Lottie>
+            <Lottie animationData={joven}></Lottie>
           </div>
         </div>
         <div className="box">
           <p id="edadesAncianos">
-            {parraAbuelos} <br /> {edades60} persona
+            {parraAbuelos} <br /> <span> {edades60}  </span>persona
           </p>
           <div className="reductor">
             <Lottie animationData={ancianito}></Lottie>

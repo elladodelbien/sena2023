@@ -15,7 +15,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 display:flex;
 justify-content:center;
 align-items:center;
-
+@media (max-width: 768px) {
+  display:block ;
+}
 .error {
   display: block;
   background:red;
@@ -74,39 +76,39 @@ const FormularioEdades = ({handleChange,edades,promedioEdadMenores,handleSubmit,
           <br />
 
           <label htmlFor="edad2">Edad 2:</label>
-          <input type="number" onChange={handleInputChange} id="edad2" name="edad2" />
+          <input type="number" onChange={validarEdadMaxima} id="edad2" name="edad2" />
           <br />
 
           <label htmlFor="edad3">Edad 3:</label>
-          <input type="number" onChange={handleInputChange} id="edad3" name="edad3" />
+          <input type="number" onChange={validarEdadMaxima} id="edad3" name="edad3" />
           <br />
 
           <label htmlFor="edad4">Edad 4:</label>
-          <input type="number" onChange={handleInputChange} id="edad4" name="edad4" />
+          <input type="number" onChange={validarEdadMaxima} id="edad4" name="edad4" />
           <br />
 
           <label htmlFor="edad5">Edad 5:</label>
-          <input type="number" onhange={handleInputChange} id="edad5" name="edad5" />
+          <input type="number" onhange={validarEdadMaxima} id="edad5" name="edad5" />
           <br />
 
           <label htmlFor="edad6">Edad 6:</label>
-          <input type="number" onhange={handleInputChange} id="edad6" name="edad6" />
+          <input type="number" onhange={validarEdadMaxima} id="edad6" name="edad6" />
           <br />
 
           <label htmlFor="edad7">Edad 7:</label>
-          <input type="number" onhange={handleInputChange} id="edad7" name="edad7" />
+          <input type="number" onhange={validarEdadMaxima} id="edad7" name="edad7" />
           <br />
 
           <label htmlFor="edad8">Edad 8:</label>
-          <input type="number" onhange={handleInputChange} id="edad8" name="edad8" />
+          <input type="number" onhange={validarEdadMaxima} id="edad8" name="edad8" />
           <br />
 
           <label htmlFor="edad9">Edad 9:</label>
-          <input type="number" onhange={handleInputChange} id="edad9" name="edad9" />
+          <input type="number" onhange={validarEdadMaxima} id="edad9" name="edad9" />
           <br />
 
           <label htmlFor="edad10">Edad 10:</label>
-          <input type="number" onhange={handleInputChange} id="edad10" name="edad10" />
+          <input type="number" onhange={validarEdadMaxima} id="edad10" name="edad10" />
           <br />
           <button type="submit">Promediar Edades</button>
 
