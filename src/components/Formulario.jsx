@@ -166,11 +166,11 @@ const Formulario = ({  funcionb,  funcionh,  cerrar,  funcionl, titulo, calculo,
       </InputContainer>
       <InputContainer>
         <Label>Altura:</Label>
-        <Input onChange={funcionh} type="text" name="altura" />
+        <Input onChange={funcionh} type="number" name="altura" />
       </InputContainer>
       <InputContainer>
         <Label>Lado:</Label>
-        <Input onChange={funcionl} type="text" name="lado" />
+        <Input onChange={funcionl} type="number" name="lado" />
       </InputContainer>
      
         <Button onClick={calculo} type="submit">

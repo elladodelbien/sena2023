@@ -1,9 +1,7 @@
 import { styled } from "styled-components";
 import logo from "../assets/sena.png";
 import { AiOutlineCaretLeft } from "react-icons/ai";
-import BotonesEnlace from "./BotonesEnlace";
 
-import { Link } from "react-router-dom";
 import BotonesSidebar from "./BotonesSidebar";
 
 
@@ -61,9 +59,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       size="29px"    
       backgroundcolor={"#9747FF"}
       text="EVIDENCIA 1"
-      textLink="CALCULO DE AREAS Y PERIMETROS"
+      textLink="Promedio de edades ingresadas"
       open={sidebarOpen}
       fontSize={SizeFont}
+      
      
       />
     

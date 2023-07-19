@@ -61,7 +61,7 @@ const BotonesEnlace = ({  text,  link,  backgroundcolor,  enlace,funcionb,funcio
 
         {mostrarFormulario && (
           <Formulario
-          titulo={"Rectangulo"}
+            titulo={"Rectangulo"}
             figuraGeometrica={"CALCULAR"}
             funcionb={funcionb}
             calculo={calculo}

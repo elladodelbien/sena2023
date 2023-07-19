@@ -46,6 +46,9 @@ font-size:${(props) => props.fontSize};
     background: ${(props) => brightenColor(props.backgroundcolor)};
     cursor: pointer;
   }
+  a {
+    text-transform:uppercase;
+  }
 
 
 `;
