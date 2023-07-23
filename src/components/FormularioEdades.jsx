@@ -113,7 +113,7 @@ const FormularioEdades = ({handleChange,edades,promedioEdadMenores,handleSubmit,
           <label htmlFor="edad10">Edad 10:</label>
           <input type="number" onChange={validarEdadMaxima} id="edad10" name="edad10" />
           <br />
-          <button type="submit">Promediar Edades</button>
+          {/* <button type="submit">Promediar Edades</button> */}
 
         </form>
       </div>

@@ -39,6 +39,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       size="29px"    
       backgroundcolor={"#9747FF"}
       text="EVIDENCIA 2"
+      textLink="CALCULO DE EDADES"
+      open={sidebarOpen}
+      fontSize={SizeFont}
+     
+      />
+      <BotonesSidebar
+      link="/pruebas"
+      size="29px"    
+      backgroundcolor={"#9747FF"}
+      text="EVIDENCIA 1"
       textLink="AGRUPACION DE VECTORES"
       open={sidebarOpen}
       fontSize={SizeFont}
@@ -50,16 +60,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       backgroundcolor={"#9747FF"}
       text="EVIDENCIA 1"
       textLink="RATTING DE CANCIONES"
-      open={sidebarOpen}
-      fontSize={SizeFont}
-     
-      />
-      <BotonesSidebar
-      link="/edades"
-      size="29px"    
-      backgroundcolor={"#9747FF"}
-      text="EVIDENCIA 1"
-      textLink="Promedio de edades ingresadas"
       open={sidebarOpen}
       fontSize={SizeFont}
       
