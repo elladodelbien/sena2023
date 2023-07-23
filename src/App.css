@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: Marcellus;
   color: white;
+  height: auto;
 }
 html,body {
   max-width:100%;

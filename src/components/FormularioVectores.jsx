@@ -26,6 +26,9 @@ const DivContainer = styled.div`
     flex-direction: column;
     heigth: 80%;
     padding: 25px;
+    @media (max-width: 768px) {
+        padding:15px;
+    }
     margin: 10px;
    
     h1 {

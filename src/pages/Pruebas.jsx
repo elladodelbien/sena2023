@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: 100vh;
   @media (max-width: 768px) {
     grid-template-columns: auto;
+    height:auto;
   }
   .containerColumn1 {
     display: flex;
@@ -16,6 +17,16 @@ const Wrapper = styled.div`
       display: block;
     }
   }
+`;
+const ContainerColumn2 = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+margin:12px;
+
+
 `;
 
 const FormularioWrapper2 = styled.div`
@@ -27,6 +38,11 @@ const FormularioWrapper2 = styled.div`
   align-items: center;
   border-radius: 15px;
   opacity: 90%;
+  @media (max-width:768px) {
+    width: 90%;
+    height: 60%;
+    display:block;
+  }
 `;
 const Relleno = styled.div`
   @media (max-width: 768px) {
@@ -42,14 +58,19 @@ const Pruebas = () => {
 
   const UnirListas = (lista1, lista2) => {
     const listasUnidas = lista1.concat(lista2);
-    return listasUnidas
+    return listasUnidas;
   };
   const FuncionModificadora = () => {
-     const Lu = UnirListas(grupoNumber,grupoNumber2)
-    console.log( Lu.slice(0,5))
+    const Lu = UnirListas(grupoNumber, grupoNumber2).slice(0, 5);
+    //  let lista = []
+    //  for( let i = 0 ; i<Lu.length - 1; i ++) {
+    //     const a =  i + ","
+    //     lista.push(a)
+    //  }
+    setListaCincoNums(Lu.join(" , "));
     // const CincoNumeros = Lu.slice(0,6)
     // setListaCincoNums(CincoNumeros)
-  }
+  };
 
   return (
     <>
@@ -69,14 +90,22 @@ const Pruebas = () => {
           </FormularioWrapper2>
         </div>
 
-        <div>
+        <ContainerColumn2>
           <div>
-            <button style={{backgroundColor:"green",cursor:"pointer"}} onClick={FuncionModificadora} >UNIR LISTAS</button>
+            <button
+              style={{ backgroundColor: "green", cursor: "pointer",padding:"10px", borderRadius:"5px" }}
+              onClick={FuncionModificadora}
+            >
+              UNIR LISTAS
+            </button>
           </div>
-         
-          <p>este es el otro div</p>
+
+          <p>Estos son los cinco primeros nuemeros de tu lista ordenada: </p>
+          <br />
           <p>{listaCincoNums}</p>
-        </div>
+        </ContainerColumn2>
+
+      
       </Wrapper>
     </>
   );
