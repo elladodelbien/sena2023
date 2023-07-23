@@ -38,6 +38,18 @@ const Relleno = styled.div`
 const Pruebas = () => {
   const [grupoNumber, setGrupoNumber] = useState([]);
   const [grupoNumber2, setGrupoNumber2] = useState([]);
+  const [listaCincoNums, setListaCincoNums] = useState("");
+
+  const UnirListas = (lista1, lista2) => {
+    const listasUnidas = lista1.concat(lista2);
+    return listasUnidas
+  };
+  const FuncionModificadora = () => {
+     const Lu = UnirListas(grupoNumber,grupoNumber2)
+    console.log( Lu.slice(0,5))
+    // const CincoNumeros = Lu.slice(0,6)
+    // setListaCincoNums(CincoNumeros)
+  }
 
   return (
     <>
@@ -49,20 +61,23 @@ const Pruebas = () => {
               setGrupoNumber={setGrupoNumber}
               num="1"
             ></FormularioVectores>
-            <FormularioVectores 
-            num="2"
-            grupoNumber={grupoNumber2}
-            setGrupoNumber={setGrupoNumber2}
-            
-            
+            <FormularioVectores
+              num="2"
+              grupoNumber={grupoNumber2}
+              setGrupoNumber={setGrupoNumber2}
             ></FormularioVectores>
           </FormularioWrapper2>
         </div>
+
         <div>
+          <div>
+            <button style={{backgroundColor:"green",cursor:"pointer"}} onClick={FuncionModificadora} >UNIR LISTAS</button>
+          </div>
+         
           <p>este es el otro div</p>
+          <p>{listaCincoNums}</p>
         </div>
       </Wrapper>
-   
     </>
   );
 };
