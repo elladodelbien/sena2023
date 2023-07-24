@@ -14,6 +14,8 @@ const DivContainer = styled.div`
     padding:10px;
     border-radius:5px;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
   }
   .noerror {
     display: none;
@@ -173,7 +175,7 @@ const FormularioVectores = ({ num, grupoNumber, setGrupoNumber }) => {
         </button>
       </form>
       <div className={errorEnAscendencia ? "containerParrafoError" : "noerror"}>
-        <p>aqui va {parrafoArray}</p>
+        <p>{parrafoArray}</p>
       </div>
     </DivContainer>
   );

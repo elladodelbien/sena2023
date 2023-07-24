@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: Marcellus;
   color: white;
-  height: auto;
+
 }
 html,body {
   max-width:100%;
@@ -45,7 +45,7 @@ button p {
 .columna-2 > div {
   flex: 1 0 88%;
   height: 200px;
-  margin: 12px;
+  margin: 32px;
   
 }
 
@@ -54,11 +54,18 @@ button p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
 }
 .blues {
-  background-color: blue;
+  background-color: rgba(165, 49, 194, 0);
+  padding: 20px;
+ 
 }
 
 .yellow {
-  background-color: chartreuse;
+  background-color: rgba(165, 49, 194, 0);
+  padding: 20px;
 }
+ #labelLado {
+  display: none;
+ }

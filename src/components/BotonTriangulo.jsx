@@ -32,14 +32,17 @@ const Container = styled.div`
   }
 `;
 
-const BotonTriangulo = ({  text,link,backgroundcolor,enlace,funcionb,funcionh,calculo,texto}) => {
+const BotonTriangulo = ({  text,link,CalcularTriangulo,backgroundcolor,handleHipotenusa,handleWidthTChange, handleHeightTChange,enlace,funcionb,funcionh,calculo,texto}) => {
   const hovercolor = backgroundcolor ? brightenColor(backgroundcolor) : null;
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const cerrarTriangulo = () => {
     setMostrarFormulario(false);
   };
-
+  const catetoCoseno= true;
+  const hipotenusa= true;
+  const catetoOpuesto = true;
   const toggleFormulario = () => {
+
     setMostrarFormulario(!mostrarFormulario);
   };
 
@@ -61,6 +64,15 @@ const BotonTriangulo = ({  text,link,backgroundcolor,enlace,funcionb,funcionh,ca
             figuraGeometrica={"CALCULAR"}
             wid={"300px"}
             heig={"350px"}
+            funcionb={handleWidthTChange }
+            funcionh={handleHeightTChange}
+            catetoCoseno={catetoCoseno}
+            catetoOpuesto={catetoOpuesto}
+            hipotenusa={hipotenusa}
+            handleWidthTChange={handleWidthTChange}
+            handleHeightTChange={handleHeightTChange}
+            handleHipotenusa={handleHipotenusa}
+            calculo={CalcularTriangulo}
           />
         )}
       </div>

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import FormularioVectores from "../components/FormularioVectores";
 import { useState } from "react";
-
+import Lottie from "lottie-react";
+import nino from "../assets/jovencitos.json"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -25,6 +26,14 @@ justify-content:center;
 align-items:center;
 padding:20px;
 margin:12px;
+
+.resultadoLista {
+  background-color:#f01143;
+  font-size: 25px;
+  padding:15px;
+  border-radius:13px;
+  box-shadow:0 0 42px 5px black;
+}
 
 
 `;
@@ -102,7 +111,9 @@ const Pruebas = () => {
 
           <p>Estos son los cinco primeros nuemeros de tu lista ordenada: </p>
           <br />
-          <p>{listaCincoNums}</p>
+          <p className="resultadoLista">{listaCincoNums}</p>
+          <Lottie animationData={nino}></Lottie>
+
         </ContainerColumn2>
 
       

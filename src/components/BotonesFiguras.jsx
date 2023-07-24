@@ -4,7 +4,7 @@ import imagenCuadrado from "../assets/area-de-un-cuadrado-formula-2.png";
 import imagenTriangulo from "../assets/tr.png";
 import imagenRectangulo from "../assets/rect.png";
 import BotonTriangulo from "./BotonTriangulo";
-import BotonRectangulo from "./BotonRectangulo";
+import BotonCuadrado from "./BotonCuadrado";
 
 
 
@@ -55,7 +55,7 @@ const Container = styled.div`
   }
 `;
 
-const BotonesFiguras = ({  calculo,   width,  texto, toggleFormulario, funcionh,  funcionb}) => {
+const BotonesFiguras = ({  calculo,CalcularTriangulo, CalcularCuadrado,weightC, setWeightC, setHeightC,heightC, width, handleHipotenusa, handleHeightTChange,handleWidthTChange,  texto, toggleFormulario, funcionh,  funcionb}) => {
     const text1 = "rectangulo"
     const text3 = "Cuadrado"
     const text2 = "triangulo"
@@ -83,13 +83,26 @@ const BotonesFiguras = ({  calculo,   width,  texto, toggleFormulario, funcionh,
         <div>
           <img src={imagenCuadrado}  alt="" srcSet="" />
         </div>
-        <BotonRectangulo/>
+        <BotonCuadrado
+        heightC={heightC} 
+        setHeightC={setHeightC}
+        weightC={weightC} 
+        setWeightC={setWeightC}
+        CalcularCuadrado={CalcularCuadrado}
+        
+        />
       </div>
       <div className="cuadrado">
        
         <div>
           <img src={imagenTriangulo} width={80} height={80} alt="" srcSet="" />
-          <BotonTriangulo/>
+          <BotonTriangulo
+          handleHeightTChange={handleHeightTChange}
+          handleWidthTChange={handleWidthTChange}
+          handleHipotenusa={handleHipotenusa}
+          CalcularTriangulo={CalcularTriangulo}
+          
+          />
         </div>
         
       </div>

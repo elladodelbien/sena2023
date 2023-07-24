@@ -31,31 +31,51 @@ const Container = styled.div`
     font-size: 12px;
   }
 `;
-
-const BotonRectangulo = ({
-  text,
-  link,
-  backgroundcolor,
-  enlace,
-  funcionb,
-  funcionh,
-  calculo,
-  texto,
-}) => {
+const BotonCuadrado = ({  text,CalcularCuadrado,  link,weightC, setWeightC,perimetroCuadrado, setHeightC,heightC, backgroundcolor,  enlace,  funcionb,  funcionh,  calculo,  texto,}) => {
   const hovercolor = backgroundcolor ? brightenColor(backgroundcolor) : null;
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+ 
+  const labelLado = true
   const cerrarRectangulo = () => {
     setMostrarFormulario(false);
   };
 
   const toggleFormulario = () => {
+
     setMostrarFormulario(!mostrarFormulario);
+  };
+
+
+
+    
+   
+
+
+    
+
+
+
+
+    
+ 
+
+
+
+// ////////////////////////////////////////////////////////////////////////
+
+  const handleHeightCuadrado = (event) => {
+    const value = event.target.value;
+    setHeightC(value);
+  };
+  const handleWeightCuadrado = (event) => {
+    const value = event.target.value;
+    setWeightC(value);
   };
 
   return (
     <Container backgroundcolor={backgroundcolor} hovercolor={hovercolor}>
       <div>
-        <p className="parrafo-img">Rectangulo</p>
+        <p className="parrafo-img">Cuadrado</p>
         {/* <Link to={link}>{enlace}</Link> */}
       </div>
       <div className="btn">
@@ -65,11 +85,15 @@ const BotonRectangulo = ({
 
         {mostrarFormulario && (
           <Formulario
-            titulo={"Rectangulo"}
+            titulo={"Cuadrado"}
             cerrar={cerrarRectangulo}
             figuraGeometrica={"CALCULAR"}
             wid={"300px"}
             heig={"350px"}
+            funcionh={handleHeightCuadrado}
+            funcionb={handleWeightCuadrado}
+            calculo={CalcularCuadrado}
+            labelLado={labelLado}
           />
         )}
       </div>
@@ -99,4 +123,4 @@ const brightenColor = (color) => {
   return brightenedColor;
 };
 
-export default BotonRectangulo;
+export default BotonCuadrado;

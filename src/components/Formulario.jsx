@@ -1,89 +1,5 @@
-// import { styled } from "styled-components";
-// const Inputts = ({funciones,calculo,labbel}) => {
-//   return (
-//     <div>
-//       <InputContainer>
-//         <Label>{labbel}</Label>
-//         <Input onChange={funciones}/>
-//       </InputContainer>
-//       <button onClick={calculo}></button>
-//     </div>
-//   );
-// };
-// const InputContainer = styled.div`
-//   margin-bottom: 10px;
-//   display:flex;
-//   flex-direction:column;
 
-// `;
 
-// const Label = styled.label`
-//   margin-right: 10px;
-// `;
-
-// const Input = styled.input`
-//   width: 200px;
-//   height: 30px;
-//   color:black;
-// `;
-
-// // export default Inputts;
-// import React from 'react';
-// import styled from 'styled-components';
-
-// const StyledForm = styled.form`
-//   background-color: #f8f8f8;
-//   width: ${props => props.tamano};
-//   padding: 20px;
-//   border-radius: 5px;
-// `;
-
-// const StyledLabel = styled.label`
-//   display: block;
-//   margin-bottom: 10px;
-// `;
-
-// const StyledInput = styled.input`
-//   padding: 10px;
-//   border-radius: 4px;
-//   border: 1px solid #ccc;
-//   width: 100%;
-//   box-sizing: border-box;
-//   margin-bottom: 10px;
-// `;
-
-// const StyledButton = styled.button`
-//   padding: 10px;
-//   border-radius: 4px;
-//   text-transform: uppercase;
-//   background-color: #5fc550;
-//   color: #fff;
-//   border: none;
-//   cursor: pointer;
-// `;
-
-// const Formulario = ({ color, tamano }) => {
-//   return (
-//     <StyledForm color={color} tamano={tamano}>
-//       <StyledLabel>
-//         Base:
-//         <StyledInput type="text" name="base" />
-//       </StyledLabel>
-//       <StyledLabel>
-//         Altura:
-//         <StyledInput type="text" name="altura" />
-//       </StyledLabel>
-//       <StyledLabel>
-//         Lado:
-//         <StyledInput type="text" name="lado" />
-//       </StyledLabel>
-//       <StyledButton type="submit">Registrar</StyledButton>
-//     </StyledForm>
-//   );
-// };
-
-// export default Formulario;
-import React from "react";
 import styled from "styled-components";
 
 const InputContainer = styled.div`
@@ -156,24 +72,27 @@ const FormContainer = styled.div`
   
 `;
 
-const Formulario = ({  funcionb,  funcionh,  cerrar,  funcionl, titulo, calculo,  width,  wid,  heig,  figuraGeometrica}) => {
+const Formulario = ({ funcionb, CalcularTriangulo, labelLado,funcionh,catetoCoseno,  handleHipotenusa,handleHeightTChange, handleWidthTChange , hipotenusa,catetoOpuesto, cerrar,  funcionl, titulo, calculo,  width,  wid,  heig,  figuraGeometrica}) => {
+     
+  
+
   return (
     <FormContainer wid={wid} heig={heig}>
       <h1>{titulo}</h1>
       <InputContainer>
-        <Label>Base:</Label>
+        <Label>{catetoCoseno ? "Cateto Adyacente" : "Base"} </Label>
         <Input onChange={funcionb} value={width} type="text" name="base" />
       </InputContainer>
       <InputContainer>
         <Label>Altura:</Label>
         <Input onChange={funcionh} type="number" name="altura" />
       </InputContainer>
-      <InputContainer>
-        <Label>Lado:</Label>
-        <Input onChange={funcionl} type="number" name="lado" />
+      <InputContainer id={labelLado ? "labelLado" : ""}>
+        <Label>{hipotenusa ? "Hipotenusa" : "Lado:" }</Label>
+        <Input onChange={handleHipotenusa} type="number" name="lado" />
       </InputContainer>
      
-        <Button onClick={calculo} type="submit">
+        <Button  onClick={calculo} type="submit">
           {figuraGeometrica}
         </Button>
       
