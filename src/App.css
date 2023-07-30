@@ -68,4 +68,15 @@ button p {
 }
  #labelLado {
   display: none;
+  
  }
+.ficha-usuario p {
+  color: black;
+  height: 100%;
+}
+#contenedor-ficha {
+  background: snow;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 1px 2px 24px -3px black;
+}

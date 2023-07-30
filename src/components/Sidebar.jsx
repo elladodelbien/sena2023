@@ -55,7 +55,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
      
       />
       <BotonesSidebar
-      link="/edades"
+      link="/ratting"
       size="29px"    
       backgroundcolor={"#9747FF"}
       text="EVIDENCIA 1"
