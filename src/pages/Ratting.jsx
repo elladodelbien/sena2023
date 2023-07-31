@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { styled } from "styled-components";
 
 const Container = styled.div`
@@ -15,11 +15,11 @@ const Container = styled.div`
     background-color: #9747ff;
     display: grid;
     overflow-y: auto;
-
+    font-size:16px;
     padding: 12px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, minmax(50px, 200px));
-    gap: 5px;
+    grid-template-rows: repeat(4, minmax(120px, 200px));
+    column-gap: 9px;
 
     @media only screen and (max-width: 600px) {
       padding: 25px;
@@ -27,7 +27,13 @@ const Container = styled.div`
       margin-top:10px;
       grid-template-rows: 120px;
       row-gap: 20px;
+      margin-top:60px;
       border-top: solid 3px black;
+
+      
+    }
+    @media only screen and (max-width: 400px) {
+      grid-template-columns: 0.60fr;
     }
   }
   .contenedor-formulario {
@@ -36,9 +42,11 @@ const Container = styled.div`
     @media (max-width: 720px) {
       background-color: blue;
       width: 100%;
-      height: 70%;
+      height: auto;
       padding: 1px 62px 0px 22px;
     }
+
+   
 
     .error {
       display: block;
@@ -55,17 +63,49 @@ const Container = styled.div`
       background-color: blue;
       width: 100%;
       height: 70%;
-      padding: 20px;
-
+      padding: 24px;
+      
+      #btn-mostrar-datos {
+        margin-top:30px;
+        width:100%;
+        text-transform:uppercase;
+        background-color:#0000ff;
+        color:white;
+        font-weight:bold;
+        border-radius:5px;
+        padding:15px;
+      
+      }
+      
       @media (max-width: 720px) {
         #btn-mostrar-datos {
-          margin-top: 100px;
+          margin-top: 10px;
+          
+          
         }
+        #btn-mostrar-datos {
+          @media (max-width: 400px) {
+            display:flex;
+            width:300px;
+            margin-top: 10px;
+
+        }
+        }
+      
       }
       .container-btn {
         width:100%;
-        display:flex;
-        justify-content:center;
+        display:block;
+        @media (max-width:720px) {
+          display:flex;
+          justify-content:center;
+        }
+        @media (max-width: 400px) {
+          display:block;
+          width:auto;
+        }
+        
+      
       } 
 
       .boton-enviar:hover {
@@ -75,7 +115,9 @@ const Container = styled.div`
       .boton-enviar {
         margin-top: 20px;
         padding: 10px;
-        color: black;
+        background:#1a8442;
+        color:white;
+        
         transition: all 0.8s;
         @media (max-width: 720px) {
           width: 60%;
@@ -96,6 +138,7 @@ const Container = styled.div`
 `;
 
 const Ratting = () => {
+  const contenedorEncuestasRef = useRef(null);
   const [nombre, setNombre] = useState("");
   const [fechaNacimiento, setFechaNacimiento] = useState("");
   const [correo, setCorreo] = useState("");
@@ -110,7 +153,7 @@ const Ratting = () => {
   const recorrerDatos = async (obj) => {
     while (sectionEncuestas.firstChild) {
       sectionEncuestas.removeChild(sectionEncuestas.firstChild);
-      const div = document.createElement("div");
+      
     }
     // for (let i = 0; i < obj.length; i++) {
     //   const element = obj[i];
@@ -143,11 +186,15 @@ const Ratting = () => {
       sectionEncuestas.appendChild(ficha);
     }
 
-    sectionEncuestas.appendChild(div);
+    contenedorEncuestasRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
   };
 
   const datosPantalla = () => {
     recorrerDatos(baseDeDatosEncuestas);
+   
   };
 
   const RecogerDatos = (event) => {
@@ -263,7 +310,7 @@ const Ratting = () => {
               className="boton-enviar"
               onClick={datosPantalla}
             >
-              mostrar datos en pantalla
+              Click aqui mostrar datos en pantalla
             </button>
 
             </div>
@@ -273,7 +320,11 @@ const Ratting = () => {
         <div
           id="contenedor-encuestas"
           className="contenedor-encuestas "
-        ></div>
+          ref={contenedorEncuestasRef}
+        >
+            
+
+        </div>
       </Container>
     </>
   );
@@ -283,3 +334,4 @@ export default Ratting;
 
 //   // grid-template-columns:   repeat(4, 1fr);
 // grid-template-rows: 130px ;
+2
