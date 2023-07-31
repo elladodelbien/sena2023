@@ -5,64 +5,68 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 100vh auto;
-  @media (max-width:720px) {
-    display:block;
+  @media (max-width: 720px) {
+    float: left;
+    padding: 1px;
+    display: block;
   }
 
-
   .contenedor-encuestas {
-    background-color: red;
-    display:grid;
+    background-color: #9747ff;
+    display: grid;
     overflow-y: auto;
-  
-    padding:12px;
+
+    padding: 12px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, minmax(50px, 200px));
-    gap:5px;
+    gap: 5px;
 
- 
-    @media (max-width:720px) {
-      padding:25px;
-      grid-template-columns:0.88fr;
-      grid-template-rows:120px;
-      row-gap:20px;
-
-      
+    @media only screen and (max-width: 600px) {
+      padding: 25px;
+      grid-template-columns: 0.88fr;
+      margin-top:10px;
+      grid-template-rows: 120px;
+      row-gap: 20px;
+      border-top: solid 3px black;
     }
-    
   }
   .contenedor-formulario {
     display: flex;
-  
-      @media (max-width:720px) {
-         background-color: blue;
-         width: 100%;
-         height: 70%;
-         padding: 1px 62px 0px 22px;
-       }
-    
-    
-  
+
+    @media (max-width: 720px) {
+      background-color: blue;
+      width: 100%;
+      height: 70%;
+      padding: 1px 62px 0px 22px;
+    }
+
     .error {
-      display:block;
+      display: block;
       background-color: #ff2848;
       color: #ffffff;
     }
     .noerror {
-      display:none;
+      display: none;
     }
 
-     
-    
-
-    justify-contente: center;
+    justify-content: center;
     align-items: center;
     .contenedor-formulario-form {
       background-color: blue;
       width: 100%;
       height: 70%;
       padding: 20px;
-    
+
+      @media (max-width: 720px) {
+        #btn-mostrar-datos {
+          margin-top: 100px;
+        }
+      }
+      .container-btn {
+        width:100%;
+        display:flex;
+        justify-content:center;
+      } 
 
       .boton-enviar:hover {
         transform: scale(1.05);
@@ -73,10 +77,19 @@ const Container = styled.div`
         padding: 10px;
         color: black;
         transition: all 0.8s;
+        @media (max-width: 720px) {
+          width: 60%;
+        }
       }
       input {
         width: 100%;
         color: black;
+        @media (max-width: 720px) {
+          width: 100%;
+        }
+        @media (max-width: 400px) {
+          width: 60%;
+        }
       }
     }
   }
@@ -90,22 +103,21 @@ const Ratting = () => {
   const [ciudadOrigen, setciudadOrigen] = useState("");
   const [telefono, setTelefono] = useState("");
   const [baseDeDatosEncuestas, setbaseDeDatosEncuestas] = useState([]);
-  const [correoExiste,setCorreoExiste] = useState(false)
+  const [correoExiste, setCorreoExiste] = useState(false);
   const errorMensaje = "ese correo ya existe";
-  const sectionEncuestas = document.getElementById("contenedor-encuestas")
+  const sectionEncuestas = document.getElementById("contenedor-encuestas");
 
-
-
- const recorrerDatos = async (obj) => {
-  while (sectionEncuestas.firstChild) {
-    sectionEncuestas.removeChild( sectionEncuestas.firstChild);
-  const div =   document.createElement("div")}
+  const recorrerDatos = async (obj) => {
+    while (sectionEncuestas.firstChild) {
+      sectionEncuestas.removeChild(sectionEncuestas.firstChild);
+      const div = document.createElement("div");
+    }
     // for (let i = 0; i < obj.length; i++) {
     //   const element = obj[i];
     //   console.log(Object.keys(element))
     //   const texto = document.createElement("p")
     //   texto.innerText= element.name + "<br>" +  element.correo
-      
+
     //   div.appendChild(texto)
     // }
 
@@ -114,7 +126,7 @@ const Ratting = () => {
       const element = obj[i];
       const ficha = document.createElement("div");
       ficha.classList.add("ficha-usuario"); // Agrega una clase para aplicar estilos específicos a la ficha.
-  
+
       const contenidoFicha = `
        <div id="contenedor-ficha">
        
@@ -126,23 +138,21 @@ const Ratting = () => {
        
        </div> 
       `;
-  
+
       ficha.innerHTML = contenidoFicha;
       sectionEncuestas.appendChild(ficha);
     }
 
+    sectionEncuestas.appendChild(div);
+  };
 
+  const datosPantalla = () => {
+    recorrerDatos(baseDeDatosEncuestas);
+  };
 
-    sectionEncuestas.appendChild(div)
- }
- 
- const datosPantalla = () => {
-  recorrerDatos(baseDeDatosEncuestas)
- }
- 
   const RecogerDatos = (event) => {
     event.preventDefault();
-    
+
     const datos = new FormData(event.target);
     const datosFormulario = Object.fromEntries(datos);
     // const {name, fechaNacimiento, correo, ciudadResidencia, ciudadOrigen, telefono} = datosFormulario
@@ -152,23 +162,20 @@ const Ratting = () => {
     );
 
     if (YaExisteCorreo) {
-      setCorreoExiste(true)
-      return true
+      setCorreoExiste(true);
+      return true;
     }
-    
-    setCorreoExiste(false)
+
+    setCorreoExiste(false);
     setbaseDeDatosEncuestas([...baseDeDatosEncuestas, datosFormulario]);
     setCorreo("");
-  
-    // recorrerDatos(baseDeDatosEncuestas)
 
-   
+    // recorrerDatos(baseDeDatosEncuestas)
   };
 
   return (
     <>
       <Container>
-       
         <div className="contenedor-formulario">
           <form
             onSubmit={RecogerDatos}
@@ -176,7 +183,9 @@ const Ratting = () => {
             method="post"
             action=""
           >
-        <h1 className={correoExiste ? "error" : "noerror"}>{errorMensaje}</h1>
+            <h1 className={correoExiste ? "error" : "noerror"}>
+              {errorMensaje}
+            </h1>
             <label htmlFor="name">nombre</label>
             <br />
             <input
@@ -237,22 +246,34 @@ const Ratting = () => {
               onChange={(e) => setTelefono(e.target.value)}
             />
             <br />
+            <div className="container-btn">
 
             <input
               className="boton-enviar"
               type="submit"
               value={"ENVIAR ENCUESTA"}
             />
-          <button className="boton-enviar" onClick={datosPantalla}>mostrar datos en pantalla</button>
+
+            </div>
+
+            <div className="container-btn">
+
+            <button
+              id="btn-mostrar-datos"
+              className="boton-enviar"
+              onClick={datosPantalla}
+            >
+              mostrar datos en pantalla
+            </button>
+
+            </div>
           </form>
         </div>
-
-        <div id="contenedor-encuestas" className="contenedor-encuestas">
-
-
-
-
-        </div>
+   
+        <div
+          id="contenedor-encuestas"
+          className="contenedor-encuestas "
+        ></div>
       </Container>
     </>
   );
@@ -260,7 +281,5 @@ const Ratting = () => {
 
 export default Ratting;
 
-
-
 //   // grid-template-columns:   repeat(4, 1fr);
-    // grid-template-rows: 130px ;
+// grid-template-rows: 130px ;
